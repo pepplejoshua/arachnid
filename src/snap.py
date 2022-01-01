@@ -18,7 +18,7 @@ def takeSnapshotOf(path: str, query: Filter, showFiles: bool=False) -> Snapshot:
 def enumerateItemsAt(path: Path, query: Filter):
     items = []
     for item in path.iterdir():
-        if item.is_file() and matchesFilter(path.name, query):
+        if item.is_file() and matchesFilter(item.name, query):
             # enumerate a file that passes query
             items.append(('file', item)) 
         elif item.is_dir():

@@ -120,7 +120,7 @@ class Snapshot:
             if diritem.is_file() and Snapshot._filterFilesByQuery(diritem, query):
                 diritems.append(('f', diritem))
 
-            if checkDirs and diritem.is_dir():
+            elif checkDirs and diritem.is_dir():
                 diritems.append(('d', diritem))
 
         return diritems
